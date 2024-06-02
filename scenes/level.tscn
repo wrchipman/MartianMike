@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dlreox7vl3o0b"]
+[gd_scene load_steps=14 format=3 uid="uid://dlreox7vl3o0b"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_j8fat"]
 [ext_resource type="PackedScene" uid="uid://c8lslnq2t8612" path="res://scenes/level_2.tscn" id="2_eypnm"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c5odmfel1mnvm" path="res://scenes/saw.tscn" id="4_w536m"]
 [ext_resource type="PackedScene" uid="uid://bonk24k335es0" path="res://scenes/spike_ball.tscn" id="5_ce1ni"]
 [ext_resource type="PackedScene" uid="uid://dejg3kn4egotu" path="res://scenes/deathzone.tscn" id="5_nsb46"]
+[ext_resource type="PackedScene" uid="uid://lrbwnjaypoo4" path="res://scenes/ui_layer.tscn" id="5_yw7gt"]
 [ext_resource type="PackedScene" uid="uid://be5fwvoo32en5" path="res://scenes/tile_map.tscn" id="7_oo8mj"]
 [ext_resource type="PackedScene" uid="uid://p5kt5780fbff" path="res://scenes/bg.tscn" id="8_2g0m8"]
 [ext_resource type="PackedScene" uid="uid://sodx1tsuqq4t" path="res://scenes/start.tscn" id="10_d67te"]
@@ -19,6 +20,8 @@ next_level = ExtResource("2_eypnm")
 
 [node name="BG" parent="." instance=ExtResource("8_2g0m8")]
 bg_texture = ExtResource("3_cc6gh")
+
+[node name="UILayer" parent="." instance=ExtResource("5_yw7gt")]
 
 [node name="Deathzone" parent="." instance=ExtResource("5_nsb46")]
 
@@ -51,5 +54,3 @@ position = Vector2(157, 153)
 
 [node name="Player" parent="." instance=ExtResource("2_w482o")]
 position = Vector2(231, 151)
-collision_layer = 2
-collision_mask = 5

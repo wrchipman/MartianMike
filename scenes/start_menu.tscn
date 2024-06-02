@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://2g8gmc7ky2cq"]
+
+[ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_b2t7e"]
+[ext_resource type="PackedScene" uid="uid://p5kt5780fbff" path="res://scenes/bg.tscn" id="1_qcqmg"]
+[ext_resource type="Texture2D" uid="uid://rjxidjvporr3" path="res://assets/textures/bg/Purple.png" id="2_xn1no"]
+[ext_resource type="FontFile" uid="uid://ehwe434r81xb" path="res://assets/fonts/Kenney Pixel Square.ttf" id="3_bkvcj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_s42cp"]
+font = ExtResource("3_bkvcj")
+font_size = 40
+font_color = Color(0.247059, 0.470588, 0.85098, 1)
+outline_size = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(5, 5)
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b2t7e")
+
+[node name="BG" parent="." instance=ExtResource("1_qcqmg")]
+bg_texture = ExtResource("2_xn1no")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -204.0
+offset_top = 19.0
+offset_right = 204.0
+offset_bottom = 91.0
+grow_horizontal = 2
+text = "Martian Mike"
+label_settings = SubResource("LabelSettings_s42cp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -30.0
+offset_right = 43.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_bkvcj")
+text = "Start"
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = 25.0
+offset_right = 24.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_bkvcj")
+theme_override_font_sizes/font_size = 10
+text = "Quit"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

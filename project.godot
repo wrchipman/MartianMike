@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Martian Mike"
-run/main_scene="res://scenes/level.tscn"
+run/main_scene="res://scenes/start_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+AudioPlayer="*res://scenes/audio_player.tscn"
 
 [display]
 
