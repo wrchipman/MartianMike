@@ -199,8 +199,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nh8jb"]
 size = Vector2(14, 25)
 
-[node name="Player" type="CharacterBody2D"]
-collision_mask = 9
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_ljbyg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
